@@ -1,0 +1,175 @@
+\documentclass{article}
+
+
+% if you need to pass options to natbib, use, e.g.:
+%     \PassOptionsToPackage{numbers, compress}{natbib}
+% before loading neurips_2024
+
+
+% ready for submission
+%  \usepackage{neurips_2024}
+
+
+% to compile a preprint version, e.g., for submission to arXiv, add add the
+% [preprint] option:
+\usepackage[preprint]{neurips_2024}
+
+
+% to compile a camera-ready version, add the [final] option, e.g.:
+% \usepackage[final]{neurips_2024}
+
+
+% to avoid loading the natbib package, add option nonatbib:
+%    \usepackage[nonatbib]{neurips_2024}
+
+
+\usepackage[utf8]{inputenc} % allow utf-8 input
+\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
+\usepackage{hyperref}       % hyperlinks
+\usepackage{url}            % simple URL typesetting
+\usepackage{booktabs}       % professional-quality tables
+\usepackage{amsfonts}       % blackboard math symbols
+\usepackage{nicefrac}       % compact symbols for 1/2, etc.
+\usepackage{microtype}      % microtypography
+\usepackage{xcolor}         % colors
+\usepackage[pdftex]{graphicx}
+\usepackage{multirow}
+
+
+\title{Project Title  course }
+
+
+% The \author macro works with any number of authors. There are two commands
+% used to separate the names and addresses of multiple authors: \And and \AND.
+%
+% Using \And between authors leaves it to LaTeX to determine where to break the
+% lines. Using \AND forces a line break at that point. So, if LaTeX puts 3 of 4
+% authors names on the first line, and the last on the second line, try using
+% \AND instead of \And before the third author name.
+
+
+\author{%
+   Name, email\\
+  % examples of more authors
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \AND
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+  % \And
+  % Coauthor \\
+  % Affiliation \\
+  % Address \\
+  % \texttt{email} \\
+}
+
+
+\begin{document}
+
+
+\maketitle
+
+\section{Introduction}
+In this section, you will need to use several paragraphs to introduce the background of the task, including a description of this task, some potential applications, and why it is challenging. 
+
+\section{Problem Formulation}
+In this section, you will need to formally describe this task using equations or definitions, including the input, output, and task type (e.g., binary classification, seq2eq, multi-class classification, regression, etc.)
+
+\section{Methods}
+In this section, you will need to describe the method you use to do this task in detail. Feel free to use subsections such as data preprocessing, model design, loss function design, and training and inference.
+
+\section{Dataset and Experiments}
+In this section, you will first need to introduce your experimental settings, including data statistics, model parameters, hardware/software environment, and training setting such as epoch and optimizers, etc.
+Then, you need to demonstrate the experimental results, including the training/validation loss curve and evaluation metrics on test data.
+
+\section{Project Management}
+Introduce the members of your project team, including their roles and responsibilities. Outline the timeline of your project, highlighting key milestones and deadlines. 
+
+\section{Conclusion}
+Finally, you need to conclude your work.
+
+
+
+
+
+
+\bibliographystyle{plain}
+\bibliography{ref}
+
+\appendix
+
+\section{How to Add References}
+You will need to include a list of essential references related to your project. 
+Here are the instructions:
+\begin{enumerate}
+    \item Go to \textit{Google Scholar} (https://scholar.google.com).
+    \item Search for relevant papers or articles using keywords, titles, or author names.
+    \item Once you find the paper, click on the \textit{quotation mark} (") icon of the search result.
+    \item A citation window will pop up. Click on \textit{BibTeX} to get the BibTeX citation format for the reference.
+    \item Copy the BibTeX entry.
+    \item Open your `ref.bib' file in your LaTeX project. Paste the copied BibTeX entry into your `ref.bib' file.
+    \item Compile your LaTeX document, then ensure the references are properly included.
+    \item In your LaTeX document, use the following command to cite a reference based on the unique ID of each reference:
+        \begin{itemize}
+            \item \verb|\cite{}| 
+        \end{itemize}
+    \item Here is an example of the citation \cite{Examplecitation} or \cite{Examplecitation,gurulingappa2012extraction}.
+\end{enumerate}
+
+\section{How to include figures and tables}
+\subsection{Including Figures in LaTeX}
+To include a figure in LaTeX, you need to first upload a figure in  fire 'fig' and thenuse the `figure` environment and the `\verb|\includegraphics|` command from the `graphicx` package. Here's an example:
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\linewidth]{fig/tree.png}
+    \caption{Figure caption.}
+    \label{fig:ablation_study}
+\end{figure}
+
+
+The `\verb|\includegraphics|` command specifies the image file, and the `width` parameter adjusts the size. The `caption` command adds a caption below the figure, and `label` assigns a reference for citing.
+The \verb|[h]| option specifies the preferred location for placing the figure. The letter 'h' meaning the figure should appear at the current location in the document. Other common placement options include 't', which places the figure at the top of the page, and 'b', which places it at the bottom of the page.
+\subsection{Including Tables in LaTeX}
+
+Tables in LaTeX are created using the `table` and `tabular` environments. Here's an example:
+
+\begin{table}[h]
+        \small
+	\centering
+	\caption{Table caption. You can add more rows or columns accordingly.}
+	\label{tab:dataset}
+	\begin{tabular}{clccc}
+		\toprule
+		\textbf{Task} & \textbf{Item} & \textbf{Train} & \textbf{Dev} & \textbf{Test}  \\
+		\midrule
+		\multirow{4}{*}{\textbf{data 1}} & item 1 & 8 & 1 & 15 \\
+		& item 2 & 1 & 2 & 13 \\
+		& item 3 & 5.7 & 5 & 0 \\
+		& item 4 & 500 & 510 & 502 \\
+		\midrule
+		\multirow{4}{*}{\textbf{data 2}} & item 1 & 2 & 20 & 12 \\
+		& item 2 & 70 & 30 & 71 \\
+		& item 3 & 12.0 & 13.0 & 15.0 \\
+		& item 4 & 0 & 10 & 20 \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+
+The `tabular` environment defines the table structure, while the `|c|c|c|` specifies column alignment and vertical lines. Captions and labels can also be added to tables similarly to figures. Same to the figure, you can choose where you want to place them
+
+
+
+
+
+\end{document}
